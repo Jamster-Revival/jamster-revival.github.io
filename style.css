@@ -1,0 +1,116 @@
+body.jamster-theme {
+  background: #282b30;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.jamster-header {
+  background: #1e2124;
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-size: 20px;
+  color:rgba(246, 9, 71);
+  font-weight: bold;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.main-nav a {
+  color:rgba(246, 9, 71);
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.jamster-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.jamster-box {
+  margin-bottom: 40px;
+}
+
+.jamster-box h2 {
+  font-size: 18px;
+  color: rgba(246, 9, 71);
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.product-list {
+  display: grid;
+  gap: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #111;
+  padding: 10px;
+  border: 1px solid #333;
+}
+
+.product img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #444;
+}
+
+.product .info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.product .info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.button {
+  margin-left: auto;
+  background: rgba(246, 9, 71);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.button:hover {
+  background: rgba(246, 9, 71);
+}
+
+.artist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.artist-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+}
+
+.jamster-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  padding: 20px;
+  border-top: 1px solid #333;
+}
