@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background: #1a1a1a;
+  font-family: "Cabin", sans-serif;
+  color: #fff;
+}
+
+.fmd_ {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fmd-dialog {
+  width: 100%;
+  max-width: 420px;
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #222 inset;
+  overflow: hidden;
+}
+
+.fmd-hd {
+  padding: 12px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  border-bottom: 1px solid #333;
+}
+
+#fmd-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 120px;
+  height: auto;
+}
+
+.fmd-bd {
+  padding: 18px;
+  background: #111;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.28), transparent 35%);
+  border-bottom: 1px solid #222;
+}
+
+.fmd-bd h1 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.fmd-errorstate {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.fmd-redirectmessage {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #ddd;
+}
+
+.fmd-bd a {
+  color: #ff0066;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.fmd-bd a:hover {
+  text-decoration: underline;
+}
+
+.fmd-ft {
+  padding: 14px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.05));
+  border-top: 1px solid #333;
+}
+
+.fmd-ft span {
+  font-size: 13px;
+  color: #bbb;
+}
+
+@media (max-width: 480px) {
+  .fmd-dialog {
+    max-width: 95%;
+  }
+
+  .logo-img {
+    width: 100px;
+  }
+
+  .fmd-bd h1 {
+    font-size: 18px;
+  }
+
+  .fmd-redirectmessage,
+  .fmd-errorstate {
+    font-size: 13px;
+  }
+}

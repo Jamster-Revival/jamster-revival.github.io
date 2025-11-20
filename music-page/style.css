@@ -1,7 +1,7 @@
 body.jamster-theme {
   background: #282b30;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: Cabin, sans-serif;
   margin: 0;
 }
 
@@ -9,11 +9,23 @@ body.jamster-theme {
   background: #1e2124;
   padding: 10px 20px;
   border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.jamster-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0));
+  pointer-events: none;
 }
 
 .logo {
   font-size: 20px;
-  color:rgba(246, 9, 71);
+  color: rgba(246, 9, 71);
   font-weight: bold;
 }
 
@@ -26,7 +38,7 @@ body.jamster-theme {
 }
 
 .main-nav a {
-  color:rgba(246, 9, 71);
+  color: rgba(246, 9, 71);
   text-decoration: none;
   font-weight: bold;
 }
@@ -42,6 +54,18 @@ body.jamster-theme {
 
 .jamster-box {
   margin-bottom: 40px;
+  position: relative;
+}
+
+.jamster-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
 }
 
 .jamster-box h2 {
@@ -63,6 +87,18 @@ body.jamster-theme {
   background: #111;
   padding: 10px;
   border: 1px solid #333;
+  position: relative;
+}
+
+.product::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  pointer-events: none;
 }
 
 .product img {
@@ -113,6 +149,18 @@ body.jamster-theme {
   color: #ccc;
   padding: 20px;
   border-top: 1px solid #333;
+  position: relative;
+}
+
+.jamster-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  pointer-events: none;
 }
 
 .product-detail {
@@ -125,6 +173,18 @@ body.jamster-theme {
   border: 1px solid #333;
   border-radius: 6px;
   box-shadow: 0 0 0 1px #222 inset;
+  position: relative;
+}
+
+.product-detail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  pointer-events: none;
 }
 
 .product-detail img {
