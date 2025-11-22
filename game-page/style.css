@@ -24,7 +24,7 @@ body.jamster-theme {
 }
 
 .logo {
-  font-size: 16px;
+  font-size: 20px;
   color: rgba(246, 9, 71);
   font-weight: bold;
 }
@@ -42,7 +42,6 @@ body.jamster-theme {
   text-decoration: none;
   font-weight: bold;
 }
-
 .main-nav a:hover {
   text-decoration: underline;
 }
@@ -70,7 +69,6 @@ body.jamster-theme {
 }
 
 .jamster-box h2 {
-  border: 1px solid #131313;
   font-size: 18px;
   color: rgba(246, 9, 71);
   border-bottom: 1px solid #333;
@@ -127,12 +125,12 @@ body.jamster-theme {
   background: rgba(246, 9, 71);
   color: #fff;
   padding: 6px 12px;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
 }
-
 .button:hover {
-  background: rgba(216, 236, 236);
+  background: rgba(246, 9, 71);
 }
 
 .artist-list {
@@ -140,7 +138,6 @@ body.jamster-theme {
   padding: 0;
   margin: 0;
 }
-
 .artist-list li {
   padding: 6px 0;
   border-bottom: 1px solid #333;
@@ -166,43 +163,67 @@ body.jamster-theme {
   pointer-events: none;
 }
 
-.pagination {
+.product-detail {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  background: #111;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #222 inset;
+  position: relative;
+}
+
+.product-detail::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+.product-detail img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 2px solid rgba(246, 9, 71, 0.6);
+  border-radius: 8px;
+  background: #1e2124;
+}
+
+.product-detail .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
-.pagination .page {
-  padding: 8px 12px;
+.product-detail .info p {
+  margin: 0;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.product-detail .info strong {
+  color: #fff;
+}
+
+.product-detail .button {
   background: rgba(246, 9, 71);
   color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
   text-decoration: none;
+  transition: background 0.2s ease;
 }
-
-.pagination .page:hover {
-  background: rgba(246, 9, 71);
-}
-
-.pagination .active {
-  background: #000;
-}
-
-.is-hidden {
-  display: none !important;
-}
-
-.search-bar {
-  margin: 20px 0;
-  text-align: left;
-}
-
-#searchInput {
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #131313;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
-  color: #fff;
-  width: 80%;
-  max-width: 400px;
+.product-detail .button:hover {
+  background: #f60947;
+  box-shadow: 0 0 0 2px #f60947 inset;
 }
