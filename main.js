@@ -63,3 +63,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// stuff for previews n shit
+
+document.addEventListener("DOMContentLoaded", () => {
+    const previews = document.querySelectorAll(".preview-btn");
+
+    previews.forEach(btn => {
+        let audio = new Audio(btn.dataset.audio);
+        let isPlaying = false;
+
+        btn.addEventListener("click", () => {
+            if (!isPlaying) {
+                btn.classList.add("loading");
+                audio.play().then(() => {
+                    btn.classList.remove("loading");
+                    btn.classList.add("playing");
+                    isPlaying = true;
+                });
+
+                audio.addEventListener("ended", () => {
+                    btn.classList.remove("playing");
+                    isPlaying = false;
+                });
+
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                btn.classList.remove("playing");
+                isPlaying = false;
+            }
+        });
+    });
+});

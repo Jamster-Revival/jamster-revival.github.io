@@ -206,3 +206,35 @@ body.jamster-theme {
   width: 80%;
   max-width: 400px;
 }
+
+.cover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.preview-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 4px;
+  width: 13px;
+  height: 13px;
+  background-image: url("assets/button-play.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  filter: drop-shadow(0 0 3px #000);
+}
+
+.preview-btn:hover {
+  opacity: 1;
+}
+
+.preview-btn.playing {
+  background-image: url("assets/button-pause.png");
+}
+
+.preview-btn.loading {
+  background-image: url("assets/button-load.png");
+}
