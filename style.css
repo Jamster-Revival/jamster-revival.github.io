@@ -238,3 +238,94 @@ body.jamster-theme {
 .preview-btn.loading {
   background-image: url("assets/button-load.png");
 }
+
+/* this is the stuff for the artist carrousel, i got the idea from modern jamba */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  border: 2px solid #444;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30,30,30,0.6);
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  padding: 8px 14px;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(246, 9, 71, 0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dots div {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  background: transparent;
+}
+
+.carousel-dots .active {
+  background: rgba(246, 9, 71);
+  border-color: rgba(246, 9, 71);
+}
+
+.carousel-wrapper h2 {
+  margin-bottom: 40px;
+  position: relative;
+  border: 1px solid #131313;
+  font-size: 18px;
+  color: rgba(246, 9, 71);
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.carousel-wrapper h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  pointer-events: none;
+  margin-bottom: 6px;
+}
