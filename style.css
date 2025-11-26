@@ -10,6 +10,9 @@ body.jamster-theme {
   padding: 10px 20px;
   border-bottom: 1px solid #333;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .jamster-header::before {
@@ -27,14 +30,28 @@ body.jamster-theme {
   font-size: 16px;
   color: rgba(246, 9, 71);
   font-weight: bold;
+  flex: 0 0 auto;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .main-nav ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   list-style: none;
   padding: 10px 0;
   margin: 0;
+  max-width: 100%;
 }
 
 .main-nav a {
@@ -171,6 +188,9 @@ body.jamster-theme {
   justify-content: center;
   margin: 20px 0;
   gap: 8px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .pagination .page {
@@ -178,6 +198,7 @@ body.jamster-theme {
   background: rgba(246, 9, 71);
   color: #fff;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .pagination .page:hover {
@@ -239,7 +260,6 @@ body.jamster-theme {
   background-image: url("assets/button-load.png");
 }
 
-/* this is the stuff for the artist carrousel, i got the idea from modern jamba */
 .carousel {
   position: relative;
   width: 100%;
@@ -283,8 +303,13 @@ body.jamster-theme {
   background: rgba(246, 9, 71, 0.9);
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
 
 .carousel-dots {
   position: absolute;
