@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jamster</title>
+  <link rel="manifest" href="manifest.json" />
   <meta content="Jamster offers you ringtones, dial tones, mobile games, screensavers and music for your mobile phones. Massive selection only here at Jamster." name="description">
   <meta name="author" content="Jamster Revival Project" />
   <meta name="publisher" content="Jamster Revival Project" />
@@ -267,5 +268,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js")
+      .then(reg => console.log("Service Worker registered:", reg))
+      .catch(err => console.error("Error with registering SW:", err));
+  }
+</script>
+
 </body>
 </html>
