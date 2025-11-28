@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Videos – Jamster</title>
+  <meta content="Only at Jamster will you find the huge selection of mobile videos. Get your videos for your mobile phone." name="description">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cvideostyle.css" />
 </head>
 <body class="jamster-theme">
   <header class="jamster-header">
@@ -36,41 +37,65 @@
         <input type="text" id="searchInput" placeholder="Search videos..." />
       </div>
       <div class="product-list">
-        <article class="product">
-          <img src="assets/covers/squeaky-druckmich.png" alt="Squeaky" />
-          <div class="info">
-            <h3>Call Me Squeaky</h3>
-            <p>Squeaky</p>
-          </div>
-          <a href="video-page/call-me-squeaky.html" class="button">Get it</a>
-        </article>
-        
-         <article class="product">
-          <img src="assets/covers/robotlittle-incomingcall.png" alt="Robot Little" />
-          <div class="info">
-            <h3>Incoming Call</h3>
-            <p>Robot Little</p>
-          </div>
-          <a href="video-page/incoming-call.html" class="button">Get it</a>
-        </article>
-        
-        <article class="product">
-          <img src="assets/covers/rene-tuparlestrop.png" alt="René La Taupe" />
-          <div class="info">
-            <h3>Tu Parles Trop</h3>
-            <p>René La Taupe</p>
-          </div>
-          <a href="video-page/tu-parles-trop.html" class="button">Get it</a>
-        </article>
+  <article class="product">
+    <div class="cover-wrapper">
+      <img src="assets/covers/squeaky-druckmich.png" alt="Squeaky" />
+      <span class="preview-btn" data-video="assets/video/short/previews/squeaky-druckmich-pre.mp4"></span>
+    </div>
+    <div class="info">
+      <h3>Call Me Squeaky</h3>
+      <p>Squeaky</p>
+    </div>
+    <a href="video-page/call-me-squeaky.html" class="button">Get it</a>
+  </article>
 
-        <article class="product">
-          <img src="assets/covers/beetle-beetlesonthefloor.png" alt="Beetles On The Floor" />
-          <div class="info">
-            <h3>Beetles On The Floor</h3>
-            <p>Beetle</p>
-          </div>
-          <a href="video-page/beetles-on-the-floor" class="button">Get it</a>
-        </article>
+  <article class="product">
+    <div class="cover-wrapper">
+      <img src="assets/covers/robotlittle-incomingcall.png" alt="Robot Little" />
+      <span class="preview-btn" data-video="assets/video/short/previews/robotlittle-incomingcall-pre.mp4"></span>
+    </div>
+    <div class="info">
+      <h3>Incoming Call</h3>
+      <p>Robot Little</p>
+    </div>
+    <a href="video-page/incoming-call.html" class="button">Get it</a>
+  </article>
+        
+<article class="product">
+  <div class="cover-wrapper">
+    <img src="assets/covers/rene-tuparlestrop.png" alt="René La Taupe" />
+    <span class="preview-btn" data-video="assets/video/full/previews/rene-tuparlestrop-pre.mp4"></span>
+  </div>
+  <div class="info">
+    <h3>Tu Parles Trop</h3>
+    <p>René La Taupe</p>
+  </div>
+  <a href="video-page/tu-parles-trop.html" class="button">Get it</a>
+</article>
+
+<article class="product">
+  <div class="cover-wrapper">
+    <img src="assets/covers/beetle-beetlesonthefloor.png" alt="beetle" />
+    <span class="preview-btn" data-video="assets/video/short/previews/beetle-beetlesonthefloor-pre.mp4"></span>
+  </div>
+  <div class="info">
+    <h3>Beetles On The Floor</h3>
+    <p>Beetle</p>
+  </div>
+  <a href="video-page/beetles-on-the-floor.html" class="button">Get it</a>
+</article>
+
+<article class="product">
+  <div class="cover-wrapper">
+    <img src="assets/covers/mauli-scheisse.png" alt="René La Taupe" />
+    <span class="preview-btn" data-video="assets/video/full/previews/rene-scheisse-pre.mp4"></span>
+  </div>
+  <div class="info">
+    <h3>Scheiße, Ich Liebe Dich</h3>
+    <p>René der Maulwurf</p>
+  </div>
+  <a href="video-page/scheisse-ich-liebe-dich.html" class="button">Get it</a>
+</article>
 
       </div>
     </section>
@@ -86,6 +111,59 @@
   </footer>
 
   <script src="main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const previews = document.querySelectorAll(".preview-btn");
+  previews.forEach(btn => {
+    const wrapper = btn.closest(".cover-wrapper");
+    const img = wrapper.querySelector("img");
+    let video = null;
+
+    const setPlayState = () => {
+      btn.classList.remove("loading");
+      btn.classList.add("playing");
+    };
+
+    const setIdleState = () => {
+      btn.classList.remove("loading");
+      btn.classList.remove("playing");
+    };
+
+    btn.addEventListener("click", () => {
+      if (!video) {
+        video = document.createElement("video");
+        video.src = btn.dataset.video;
+        video.controls = false;
+        video.muted = false;
+        video.style.display = "none";
+        video.style.position = "absolute";
+        video.style.top = "0";
+        video.style.left = "0";
+        wrapper.appendChild(video);
+        video.addEventListener("ended", () => {
+          video.style.display = "none";
+          img.style.display = "block";
+          setIdleState();
+        });
+      }
+
+      if (video.paused || video.ended || video.style.display === "none") {
+        btn.classList.add("loading");
+        img.style.display = "none";
+        video.style.display = "block";
+        video.play().then(() => setPlayState()).catch(() => setIdleState());
+      } else {
+        video.pause();
+        video.currentTime = 0;
+        video.style.display = "none";
+        img.style.display = "block";
+        setIdleState();
+      }
+    });
+  });
+});
+</script>
 
 </body>
 </html>

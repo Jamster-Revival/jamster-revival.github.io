@@ -96,52 +96,53 @@ body.jamster-theme {
 
 .product-list {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 
 .product {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  width: 180px;
+  height: 240px;
   background: #111;
-  padding: 10px;
   border: 1px solid #333;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
 }
 
-.product::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0));
-  pointer-events: none;
-}
-
 .product img {
-  width: 50px;
-  height: 50px;
+  width: 173px;
+  height: 130px;
   object-fit: cover;
   border: 1px solid #444;
 }
 
+.product .info {
+  margin-top: 8px;
+}
+
 .product .info h3 {
-  margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   color: #fff;
+  margin: 4px 0 0;
 }
 
 .product .info p {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #ccc;
+  font-size: 13px;
+  color: rgba(246, 9, 71);
+  font-weight: bold;
+  margin: 2px 0 0;
 }
 
 .button {
-  margin-left: auto;
+  margin-top: auto;
   background: rgba(246, 9, 71);
+  font-size: 13px;
+  text-transform: uppercase;
   color: #fff;
   padding: 6px 12px;
   text-decoration: none;
@@ -227,25 +228,39 @@ body.jamster-theme {
   width: 80%;
   max-width: 400px;
 }
-
 .cover-wrapper {
+  width: 173px;
+  height: 130px;
   position: relative;
   display: inline-block;
+  overflow: hidden;
+}
+
+.cover-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 173px !important;
+  height: 130px !important;
+  object-fit: cover;
+  display: none;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .preview-btn {
   position: absolute;
   bottom: 8px;
   left: 4px;
-  width: 13px;
-  height: 13px;
+  width: 20px;
+  height: 20px;
   background-image: url("assets/button-play.png");
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
-
   -webkit-tap-highlight-color: transparent;
   outline: none;
+  z-index: 2;
 }
 
 .preview-btn.playing {
