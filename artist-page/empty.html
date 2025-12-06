@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empty – Jamster</title>
+  <meta name="description" content="Discover Empty's ringtones, games, apps, videos and graphics, only at Jamster.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="jamster-theme">
+
+<header class="jamster-header">
+  <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo.png" alt="Jamster logo" width="180" />
+      </a>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="../ringtones.html">Ringtones</a></li>
+      <li><a href="../games.html">Games</a></li>
+      <li><a href="../apps.html">Apps</a></li>
+      <li><a href="../videos.html">Videos</a></li>
+      <li><a href="../graphics.html">Graphics</a></li>
+      <li><a href="https://discord.gg/ASpDSDEqU2">Discord</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="jamster-main">
+
+  <section class="jamster-box">
+    <h2>Empty</h2>
+
+<div class="product" style="align-items:flex-start; padding:20px;">
+  <img src="../assets/artists/Empty.png" 
+       alt="Empty" style="width:120px;height:120px;">
+  
+  <div class="info">
+    <h3>About this artist</h3>
+    <p id="artist-description" class="collapsed" style="color:#ccc;margin-top:8px;max-width:600px;">
+      I'm empty, very empty.
+    </p>
+    <button id="toggle-btn" class="button">See more...</button>
+  </div>
+</div>
+
+  <section class="jamster-box">
+    <h2>Ringtones</h2>
+
+    <div class="product-list">
+
+<article class="product">
+  <div class="cover-wrapper">
+    <img src="../assets/covers/empty.png" alt="Empty" />
+    <span class="preview-btn" data-audio="../assets/audio/previews/empty-pre.mp3"></span>
+  </div>
+  <div class="info">
+    <h3>Empty</h3>
+    <p>Empty</p>
+  </div>
+  <a href="../music-page/empty.html" class="button">Get it</a>
+</article>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="jamster-footer">
+  <p>Compatible with AT&T, Verizon, T-Mobile, Virgin Mobile, Sprint.</p>
+  <p>© 2025 Sunny, All rights reserved.</p>
+</footer>
+
+<script>
+  const desc = document.getElementById("artist-description");
+  const btn = document.getElementById("toggle-btn");
+
+  btn.addEventListener("click", () => {
+    desc.classList.toggle("collapsed");
+    if (desc.classList.contains("collapsed")) {
+      btn.textContent = "See more...";
+    } else {
+      btn.textContent = "See less...";
+    }
+  });
+</script>
+
+
+    <script src="main.js"></script>
+
+</body>
+</html>
